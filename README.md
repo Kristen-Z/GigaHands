@@ -31,11 +31,11 @@ The demo data contains 5 motion sequences. The file directory looks like this:
 demo_data/
 ├── hand_pose/
     ├── p<participant id>-<scene>-<squence id>/
-        ├── bboxes/								# bounding boxes for 2D keypoints tracking
+        ├── bboxes/							# bounding boxes for 2D keypoints tracking
         ├── keypoints_2d/						# 2D hand keypoints
         ├── keypoints_3d/						# 3D hand keypoints
         ├── mano_vid/							# visualizations of mano parameters 
-        ├── params/								# mano parameters
+        ├── params/							# mano parameters
         ├── rgb_vid/							# raw multview videos
         	├── brics-odrind-<camera id>-camx
         		├── xxx.mp4
@@ -43,18 +43,18 @@ demo_data/
         	├── ...
         ├── repro_2d_vid/						# visualizations of 2d hand keypoints
         ├── repro_3d_vid/						# visualizations of 3d hand keypoints
-        ├── optim_params.txt					# camera parameters
+        ├── optim_params.txt						# camera parameters
     ├── ...
 └── object_pose
     ├── p<participant id>-<scene>-<squence id>/
-        ├── mesh								# reconstructed object mesh
-        ├── pose								# object pose
-        ├── render								# visualizations of object pose
+        ├── mesh							# reconstructed object mesh
+        ├── pose							# object pose
+        ├── render							# visualizations of object pose
         ├── segmentation						# segmented object frames
     ├── ...
 ```
 
-You can download all the annotations [here](https://g-2488dc.56197.5898.data.globus.org/demo_data.tar%2Cgz) on globus.
+We store our dataset on Globus. You can download a demo sequence from [here](https://g-2488dc.56197.5898.data.globus.org/demo_data.tar%2Cgz), all annotations from [here](https://g-2488dc.56197.5898.data.globus.org/demo_all.tar.gz), and access the raw data via [here](https://app.globus.org/file-manager?origin_id=1f1426dd-3440-4cae-8c57-4a0e6934eaf2&origin_path=%2F).
 
 ### Whole Dataset
 
