@@ -58,7 +58,9 @@ We store our dataset on Globus. You can download a demo sequence from [here](htt
 
 ### Whole Dataset
 
-To be released.
+We just released all the hand pose data [here](https://g-2488dc.56197.5898.data.globus.org/hand_poses.tar.gz) (Including all `keypoints_3d` and `params`). 
+
+More data will be available soon—stay tuned!
 
 ## Checklist
 
