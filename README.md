@@ -34,7 +34,7 @@ demo_data/
         ├── bboxes/							# bounding boxes for 2D keypoints tracking
         ├── keypoints_2d/						# 2D hand keypoints 
         ├── keypoints_3d/						# 3D hand keypoints (triangulate multi-view 2D keypoints.)
-        ├── keypoints_3d_mano/					# 3D hand keypoints (extract from mano parms and normalized, more smooth)
+        ├── keypoints_3d_mano/						# 3D hand keypoints (extract from mano parms and normalized, more smooth)
         ├── mano_vid/							# visualizations of mano parameters 
         ├── params/							# mano parameters
         ├── rgb_vid/							# raw multview videos
