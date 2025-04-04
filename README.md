@@ -1,4 +1,4 @@
-# :sparkles:[CVPR 2025] GigaHands: A Massive Annotated Dataset of Bimanual Hand Activities
+# :sparkles:[CVPR 2025 Highlight] GigaHands: A Massive Annotated Dataset of Bimanual Hand Activities
 
 [CVPR 2025] Official repository of "GigaHands: A Massive Annotated Dataset of Bimanual Hand Activities".
 
@@ -32,8 +32,9 @@ demo_data/
 ├── hand_pose/
     ├── p<participant id>-<scene>-<squence id>/
         ├── bboxes/							# bounding boxes for 2D keypoints tracking
-        ├── keypoints_2d/						# 2D hand keypoints
-        ├── keypoints_3d/						# 3D hand keypoints
+        ├── keypoints_2d/						# 2D hand keypoints 
+        ├── keypoints_3d/						# 3D hand keypoints (triangulate multi-view 2D keypoints.)
+        ├── keypoints_3d_mano/					# 3D hand keypoints (extract from mano parms and normalized, more smooth)
         ├── mano_vid/							# visualizations of mano parameters 
         ├── params/							# mano parameters
         ├── rgb_vid/							# raw multview videos
@@ -58,9 +59,47 @@ We store our dataset on Globus. You can download a demo sequence from [here](htt
 
 ### Whole Dataset
 
-We just released all the hand pose data [here](https://g-2488dc.56197.5898.data.globus.org/hand_poses.tar.gz) (Including all `keypoints_3d` and `params`). 
+We just released all the hand pose data [here](https://g-2488dc.56197.5898.data.globus.org/hand_poses.tar.gz) (Including all `keypoints_3d`,  `keypoints_3d_mano` and `params`). 
 
 More data will be available soon—stay tuned!
+
+
+
+## Installation
+
+This code requires:
+
+* Python 3.8
+* conda3 or miniconda3
+* CUDA capable GPU (one is enough)
+
+1. Create a virtual environment and install necessary dependencies
+
+```shell
+conda create -n gigahands python==3.8
+conda activate gigahands
+conda install pytorch==2.2.0 torchvision==0.17.0 torchaudio==2.2.0 pytorch-cuda=12.1 -c pytorch -c nvidia
+conda install -c conda-forge ffmpeg
+pip install -r requirements.txt
+```
+
+3. Install EasyMocap
+
+```shell
+cd third-party/EasyMocap
+python setup.py develop
+```
+4. Download [mano](https://mano.is.tue.mpg.de/download.php) models and place the `MANO_*.pkl` files under `body_models/smplh`.
+
+## Visualizations
+
+After downloading all hand pose annotations, run the script below to visualize them. By default, the dataset is placed under the `dataset/hand_pose` directory.
+
+```shell
+python visualize_hands.py --dataset_root dataset/hand_pose --save_dir ./visualizations
+```
+
+You will see videos of the MANO render results and reprojected keypoints in the `visualizations` directory.
 
 ## Checklist
 
