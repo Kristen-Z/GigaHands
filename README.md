@@ -55,11 +55,11 @@ demo_data/
     ├── ...
 ```
 
-We store our dataset on Globus. You can download a demo sequence from [here](https://g-2488dc.56197.5898.data.globus.org/demo_data.tar%2Cgz), all annotations from [here](https://g-2488dc.56197.5898.data.globus.org/demo_all.tar.gz), and access the raw data via [here](https://app.globus.org/file-manager?origin_id=1f1426dd-3440-4cae-8c57-4a0e6934eaf2&origin_path=%2F).
+We store our dataset on Globus. You can download a demo sequence from [here](https://g-852369.56197.5898.data.globus.org/gigahands_demo.tar.gz), all annotations from [here](https://g-852369.56197.5898.data.globus.org/gigahands_demo_all.tar.gz), and access the raw data via [here](https://app.globus.org/file-manager?origin_id=d7b33299-4380-49be-9727-78271911d231&origin_path=%2F).
 
 ### Whole Dataset
 
-We just released all the hand pose data [here](https://g-2488dc.56197.5898.data.globus.org/hand_poses.tar.gz) (Including all `keypoints_3d`,  `keypoints_3d_mano` and `params`). 
+We just released all the hand pose data [here](https://g-852369.56197.5898.data.globus.org/hand_poses.tar.gz) (Including all `keypoints_3d`,  `keypoints_3d_mano` and `params`). 
 
 More data will be available soon—stay tuned!
 
