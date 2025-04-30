@@ -37,7 +37,7 @@ demo_data/
         ├── keypoints_3d_mano/						# 3D hand keypoints (extract from mano parms and normalized, more smooth)
         ├── mano_vid/							# visualizations of mano parameters 
         ├── params/							# mano parameters
-        ├── rgb_vid/							# raw multview videos
+        ├── rgb_vid/							# raw multiview videos
         	├── brics-odrind-<camera id>-camx
         		├── xxx.mp4
         		├── xxx.txt
@@ -59,9 +59,11 @@ We store our dataset on Globus. You can download a demo sequence from [here](htt
 
 ### Whole Dataset
 
-We just released all the hand pose data [here](https://g-852369.56197.5898.data.globus.org/hand_poses.tar.gz) (Including all `keypoints_3d`,  `keypoints_3d_mano` and `params`). 
+We are pleased to release our full hand pose dataset, available for download [here](https://g-852369.56197.5898.data.globus.org/hand_poses.tar.gz) (Including all `keypoints_3d`,  `keypoints_3d_mano` and `params`). 
 
-More data will be available soon—stay tuned!
+For multiview RGB videos, access our Globus repository: [here](https://app.globus.org/file-manager?origin_id=d7b33299-4380-49be-9727-78271911d231&origin_path=%2Fmultiview_rgb_vids%2F). Download each `.tar.gz` separately (contains 10 views per file, 51 camera views in total.)
+
+More data coming soon! 🔜
 
 
 
