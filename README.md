@@ -59,11 +59,11 @@ We store our dataset on Globus. You can download a demo sequence from [here](htt
 
 ### Whole Dataset
 
-[2025/04/02] We are pleased to release our full **hand pose** dataset, available for download [here](https://g-852369.56197.5898.data.globus.org/hand_poses.tar.gz) (Including all `keypoints_3d`,  `keypoints_3d_mano` and `params`). 
+[2025/05/23] For **object poses**, access our Globus repository: [here](https://app.globus.org/file-manager?origin_id=d7b33299-4380-49be-9727-78271911d231&origin_path=%2Fobject_poses%2F). Download each `.tar.gz` separately (contains 1000 motion sequences per file.)
 
 [2025/04/30] For **multiview RGB videos**, access our Globus repository: [here](https://app.globus.org/file-manager?origin_id=d7b33299-4380-49be-9727-78271911d231&origin_path=%2Fmultiview_rgb_vids%2F). Download each `.tar.gz` separately (contains 10 views per file, 51 camera views in total.)
 
-[2025/05/23] For **object poses**, access our Globus repository: [here](https://app.globus.org/file-manager?origin_id=d7b33299-4380-49be-9727-78271911d231&origin_path=%2Fobject_poses%2F). Download each `.tar.gz` separately (contains 1000 motion sequences per file.)
+[2025/04/02] We are pleased to release our full **hand pose** dataset, available for download [here](https://g-852369.56197.5898.data.globus.org/hand_poses.tar.gz) (Including all `keypoints_3d`,  `keypoints_3d_mano` and `params`). 
 
 Complete **text annotation** are available [here](https://g-852369.56197.5898.data.globus.org/annotations_v2.jsonl?download=1). We used the `rewritten_annotation` for model training. 
 
@@ -110,9 +110,19 @@ You will see videos of the MANO render results and reprojected keypoints in the 
 ## Checklist
 
 - [x] Release demo data
+- [x] Release hand pose data
+- [x] Release multi-view video data
+- [ ] Release object pose data (13k)
 - [ ] Release inference code for text-to-motion task
 - [ ] Release training code for text-to-motion task
-- [ ] Release whole dataset
+
+## License
+
+This dataset is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License.
+
+[![CC BY-NC 4.0](https://licensebuttons.net/l/by-nc/4.0/88x31.png)](https://creativecommons.org/licenses/by-nc/4.0/)
+
+To view a copy of this license, visit https://creativecommons.org/licenses/by-nc/4.0/.
 
 ## Citation
 
