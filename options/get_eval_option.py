@@ -55,7 +55,7 @@ def get_opt(opt_path, device=torch.device('cpu')):
     opt.meta_dir = pjoin(opt.save_root, 'meta')
 
     if opt.dataset_name.startswith('GigaHands'):
-        opt.data_root = './dataset/hand_poses'
+        opt.dataset_root = './dataset/GigaHands/hand_poses'
         opt.joints_num = 42
         opt.max_motion_length = 200
         opt.max_motion_token = 55

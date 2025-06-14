@@ -108,23 +108,19 @@ def find_closest_video(folder, anchor_timestamp):
 # -------------------- Visualization Functions -------------------- #
 def plot_3d_hand_motion(motion, gt_motion=None, data_path='./dataset/hand_pose', out_path=None, save_file=None, to_vis_mano=True, add_back=False, scene_path='./p001-folder', camera_view='brics-odroid-021_cam1', save_mesh=False, vis_3d_repro=False):
 
-    parser = argparse.ArgumentParser("Mano Fitting Argument Parser")
-    parser.add_argument('--name', type=str)
-    parser.add_argument('--dataset_name', type=str)
-    parser.add_argument('--text_prompt', type=str)
-    parser.add_argument('--input_text', type=str)
-    parser.add_argument('--num_repetitions', type=int)
-    parser.add_argument('--model', type=str, default='manor')
-    parser.add_argument('--body', type=str, default='handr')
-    parser.add_argument('--gender', type=str, default='neutral')
-    parser.add_argument('--verbose', type=bool, default=False)
-    parser.add_argument('--robust3d', type=bool, default=False)
-    parser.add_argument('--save_origin', type=bool, default=False)
-    parser.add_argument('--save_frame', type=bool, default=False)
-    parser.add_argument('--proj_share_weight', action="store_true", help='Training iterations')
-    parser.add_argument('--sample', action="store_true")
-    
-    args = parser.parse_args()
+    args = argparse.Namespace(
+        dataset_name='GigaHands',
+        num_repetitions=1,
+        model='manor',
+        body='handr',
+        gender='neutral',
+        verbose=False,
+        robust3d=False,
+        save_origin=False,
+        save_frame=False,
+        proj_share_weight=False,
+        sample=False
+    )
     
     # Total Frames
     n_Frames = motion.shape[0]
@@ -135,7 +131,7 @@ def plot_3d_hand_motion(motion, gt_motion=None, data_path='./dataset/hand_pose',
     intrs, projs, dist_intrs, dists, cameras = get_projections(params, camera_view, n_Frames)
 
     # adjust the camera
-    # cameras['T'] += [0, 0.25, -0.5] # move up Y+, move left X+
+    cameras['T'] += [0, 0.25, -0.5] # move up Y+, move left X+
 
     body_model_right = load_model(gender='neutral', model_type='manor', model_path="body_models", num_pca_comps=6, use_pose_blending=True, use_shape_blending=True, use_pca=False, use_flat_mean=False)
     body_model_left = load_model(gender='neutral', model_type='manol', model_path="body_models", num_pca_comps=6, use_pose_blending=True, use_shape_blending=True, use_pca=False, use_flat_mean=False)
