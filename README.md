@@ -40,61 +40,6 @@ More data coming soon! 🔜
 ## Overview
 Gigahands is an extensive, fully-annotated dataset of bimanual activitites captured with 51 sycrhonized cameras. Every frame includes precise 3D hand shape & pose for both hands, 3D object shape & pose, per-pixel segmentation amsks, multi-view RGB, and calibrated camera paramteters.
 
-## Data Format
-
-### Demo Data
-
-The demo data contains 5 motion sequences. The file directory looks like this:
-
-```
-demo_data/
-├── hand_pose/
-    ├── p<participant id>-<scene>-<squence id>/
-        ├── bboxes/							# bounding boxes for 2D keypoints tracking
-        ├── keypoints_2d/						# 2D hand keypoints 
-        ├── keypoints_3d/						# 3D hand keypoints (triangulate multi-view 2D keypoints.)
-        ├── keypoints_3d_mano/						# 3D hand keypoints (extract from mano parms and normalized, more smooth)
-        ├── mano_vid/							# visualizations of mano parameters 
-        ├── params/							# mano parameters
-        ├── rgb_vid/							# raw multiview videos
-        	├── brics-odrind-<camera id>-camx
-        		├── xxx.mp4
-        		├── xxx.txt
-        	├── ...
-        ├── repro_2d_vid/						# visualizations of 2d hand keypoints
-        ├── repro_3d_vid/						# visualizations of 3d hand keypoints
-        ├── optim_params.txt						# camera parameters
-    ├── ...
-└── object_pose
-    ├── p<participant id>-<scene>-<squence id>/
-        ├── mesh							# reconstructed object mesh
-        ├── pose							# object pose
-        ├── render							# visualizations of object pose
-        ├── segmentation						# segmented object frames
-    ├── ...
-```
-
-We store our dataset on Globus. You can download a demo sequence from [here](https://g-852369.56197.5898.data.globus.org/gigahands_demo.tar.gz), all annotations from [here](https://g-852369.56197.5898.data.globus.org/gigahands_demo_all.tar.gz), and access the raw data via [here](https://app.globus.org/file-manager?origin_id=d7b33299-4380-49be-9727-78271911d231&origin_path=%2F).
-
-### Whole Dataset
-
-The dataset directory should look like this:
-
-```python
-./dataset/GigaHands/
-├── hand_poses/
-    ├── p<participant id>-<scene>/
-        ├── keypoints_3d/						# 3D hand keypoints (triangulate multi-view 2D keypoints.)
-        ├── keypoints_3d_mano/						# 3D hand keypoints (extract from mano parms and normalized, more smooth)
-        ├── params/							# mano parameters
-├── object_poses/
-	├── <object name>
-		├── p<participant id>-<scene>_<squence id>/
-			├── pose					# object 6DoF poses
-└── annotations_v2.jsonl						# text annotations
-```
-
-
 ## Installation
 
 This code requires:
@@ -158,6 +103,60 @@ Download the pretrained models by running `bash dataset/download_pretrained_mode
 ./checkpoints/GigaHands/GPT/			# Text-to-motion generation model
 ./checkpoints/GigaHands/VQVAE/ 			# Motion autoencoder
 ./checkpoints/GigaHands/text_mot_match/		# Motion & Text feature extractors for evaluation
+```
+
+## Data Format
+
+### Demo Data
+
+The demo data contains 5 motion sequences. We store our dataset on Globus. You can download a demo sequence from [here](https://g-852369.56197.5898.data.globus.org/gigahands_demo.tar.gz), all annotations from [here](https://g-852369.56197.5898.data.globus.org/gigahands_demo_all.tar.gz), and access the raw data via [here](https://app.globus.org/file-manager?origin_id=d7b33299-4380-49be-9727-78271911d231&origin_path=%2F).
+
+The file directory looks like this:
+
+```
+gigahands_demo/
+├── hand_pose/
+    ├── p<participant id>-<scene>-<squence id>/
+        ├── bboxes/							# bounding boxes for 2D keypoints tracking
+        ├── keypoints_2d/						# 2D hand keypoints 
+        ├── keypoints_3d/						# 3D hand keypoints (triangulate multi-view 2D keypoints.)
+        ├── keypoints_3d_mano/						# 3D hand keypoints (extract from mano parms and normalized, more smooth)
+        ├── mano_vid/							# visualizations of mano parameters 
+        ├── params/							# mano parameters
+        ├── rgb_vid/							# raw multiview videos
+        	├── brics-odrind-<camera id>-camx
+        		├── xxx.mp4
+        		├── xxx.txt
+        	├── ...
+        ├── repro_2d_vid/						# visualizations of 2d hand keypoints
+        ├── repro_3d_vid/						# visualizations of 3d hand keypoints
+        ├── optim_params.txt						# camera parameters
+    ├── ...
+└── object_pose
+    ├── p<participant id>-<scene>-<squence id>/
+        ├── mesh							# reconstructed object mesh
+        ├── pose							# object pose
+        ├── render							# visualizations of object pose
+        ├── segmentation						# segmented object frames
+    ├── ...
+```
+
+### Whole Dataset
+
+The dataset directory should look like this:
+
+```python
+./dataset/GigaHands/
+├── hand_poses/
+    ├── p<participant id>-<scene>/
+        ├── keypoints_3d/						# 3D hand keypoints (triangulate multi-view 2D keypoints.)
+        ├── keypoints_3d_mano/						# 3D hand keypoints (extract from mano parms and normalized, more smooth)
+        ├── params/							# mano parameters
+├── object_poses/
+	├── <object name>
+		├── p<participant id>-<scene>_<squence id>/
+			├── pose					# object 6DoF poses
+└── annotations_v2.jsonl						# text annotations
 ```
 
 ## Visualizations
