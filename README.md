@@ -27,6 +27,11 @@
 </div>
 
 ## Updates
+- [2025/07/09] For **object meshes**, you can download them [here](https://g-852369.56197.5898.data.globus.org/scans_publish.zip). 
+
+  We also provide smoother 3D hand poses that are aligned with the object coordinate system, derived from MANO parameters — available [here](https://g-852369.56197.5898.data.globus.org/keypoints_3d_mano_align.tar.gz).
+  Note: the previously provided `keypoints_3d_mano` were also generated from MANO parameters, but have been normalized and recentered to better support motion generation training.
+
 - [2025/05/23] For **object poses**, access our Globus repository: [here](https://app.globus.org/file-manager?origin_id=d7b33299-4380-49be-9727-78271911d231&origin_path=%2Fobject_poses%2F). Download each `.tar.gz` separately (contains 1000 motion sequences per file.)
 
 - [2025/04/30] For **multiview RGB videos**, access our Globus repository: [here](https://app.globus.org/file-manager?origin_id=d7b33299-4380-49be-9727-78271911d231&origin_path=%2Fmultiview_rgb_vids%2F). Download each `.tar.gz` separately (contains 10 views per file, 51 camera views in total.)
