@@ -1,6 +1,5 @@
 <div align="center">
 <h1>[CVPR 2025 Highlight] GigaHands: A Massive Anotated Dataset of Bimanual Hand Activities</h1>
-
 <a href="https://ivl.cs.brown.edu/research/gigahands.html"><img src="https://img.shields.io/badge/Project_Page-green" alt="Project Page"></a>
 <a href="https://www.arxiv.org/abs/2412.04244" target="_blank" rel="noopener noreferrer"> <img src="https://img.shields.io/badge/Paper-VGGT" alt="Paper PDF">
 </a>
@@ -43,72 +42,7 @@ Complete **text annotation** are available [here](https://g-852369.56197.5898.da
 More data coming soon! 🔜
 
 ## Overview
-Gigahands is an extensive, fully-annotated dataset of bimanual activitites captured with 51 sycrhonized cameras. Every frame includes precise 3D hand shape & pose for both hands, 3D object shape & pose, per-pixel segmentation amsks, multi-view RGB, and calibrated camera paramteters.
-
-## Installation
-
-This code requires:
-
-* Python 3.8
-* conda3 or miniconda3
-* CUDA capable GPU (one is enough)
-
-### Clone & Environment
-First, clone the repository to your local machine.
-
-```shell
-git clone https://github.com/Kristen-Z/GigaHands.git
-```
-
-Then, install all the necessary dependencies.
-```shell
-cd GigaHands
-conda create -n gigahands python==3.8
-conda activate gigahands
-conda install pytorch==2.2.0 torchvision==0.17.0 torchaudio==2.2.0 pytorch-cuda=12.1 -c pytorch -c nvidia
-conda install -c conda-forge ffmpeg
-pip install -r requirements.txt
-```
-
-### Build Third-Party Dependencites
-
-#### EasyMocap
-1. Create a placeholder folder and pull the toolbox from a git repository. 
-```shell
-mkdir -p third-party
-git clone https://github.com/zju3dv/EasyMocap.git third-party/EasyMocap
-```
-
-2. Build the C/C++ extensions to link EasyMocap into your conda environment. 
-```shell
-mkdir -p third-party
-git clone https://github.com/zju3dv/EasyMocap.git third-party/EasyMocap
-cd third-party/EasyMocap
-python setup.py develop
-```
-
-#### MANO Hand Model Files
-1. Sign the official [MANO license](https://mano.is.tue.mpg.de/) (free for research use).
-2. Navigate to the **Download** tab and download the file under Models & Code.
-3. Inside the downloaded folder, locate the `MANO_*.pkl` files (`MANO_RIGHT_v1_2.pkl` and `MANO_LEFT_v1_2.pkl`).
-4. Manually create a `smplh` folder inside the `body_models` folder and place both files into the new folder. The final paths should look like:
-```shell
-GigaHands/body_models/smplh/MANO_RIGHT_v1_2.pkl
-GigaHands/body_models/smplh/MANO_LEFT_v1_2.pkl
-```
-
-#### COLMAP (optional)
-Download COLMAP for ground-truth comparisons by running `brew install colmap`
-
-### Download Pre-trained Models
-Download the pretrained models by running `bash dataset/download_pretrained_models.sh`, which should be like:
-
-```shell
-./checkpoints/GigaHands/
-./checkpoints/GigaHands/GPT/			# Text-to-motion generation model
-./checkpoints/GigaHands/VQVAE/ 			# Motion autoencoder
-./checkpoints/GigaHands/text_mot_match/		# Motion & Text feature extractors for evaluation
-```
+Understanding bimanual human hand activities is a critical problem in AI and robotics. We cannot build large models of bimanual activities because existing datasets lack the scale, coverage of diverse hand activities, and detailed annotations. We introduce GigaHands, a massive annotated dataset capturing 34 hours of bimanual hand activities from **56 subjects** and **417 objects**, totaling **14k motion clips** derived from **183 million frames** paired with **84k text annotations**. Our markerless capture setup and data acquisition protocol enable fully automatic 3D hand and object estimation while minimizing the effort required for text annotation. The scale and diversity of GigaHands enable broad applications, including text-driven action synthesis, hand motion captioning, and dynamic radiance field reconstruction.
 
 ## Data Format
 
@@ -162,6 +96,41 @@ The dataset directory should look like this:
 		├── p<participant id>-<scene>_<squence id>/
 			├── pose					# object 6DoF poses
 └── annotations_v2.jsonl						# text annotations
+```
+
+## Installation
+
+This code requires:
+
+* Python 3.8
+* conda3 or miniconda3
+* CUDA capable GPU (one is enough)
+
+1. Create a virtual environment and install necessary dependencies
+
+```shell
+conda create -n gigahands python==3.8
+conda activate gigahands
+conda install pytorch==2.2.0 torchvision==0.17.0 torchaudio==2.2.0 pytorch-cuda=12.1 -c pytorch -c nvidia
+conda install -c conda-forge ffmpeg
+pip install -r requirements.txt
+```
+
+3. Install EasyMocap
+
+```shell
+cd third-party/EasyMocap
+python setup.py develop
+```
+
+4. Download [mano](https://mano.is.tue.mpg.de/download.php) models and place the `MANO_*.pkl` files under `body_models/smplh`.
+5. Download the pretrained models by running `bash dataset/download_pretrained_models.sh`, which should be like:
+
+```shell
+./checkpoints/GigaHands/
+./checkpoints/GigaHands/GPT/			# Text-to-motion generation model
+./checkpoints/GigaHands/VQVAE/ 			# Motion autoencoder
+./checkpoints/GigaHands/text_mot_match/		# Motion & Text feature extractors for evaluation
 ```
 
 ## Visualizations
@@ -261,7 +230,10 @@ If you find our work useful in your research, please cite:
 
 ## Acknowledgement
 
-GigaHands builds on excellent open‑source projects including EasyMocap, SMPL‑X/MANO, and COLMAP. This research was supported by AFOSR grant FA9550-21 1-0214, NSF CAREER grant #2143576, and ONR DURIP grant N00014-23-1-2804. We would like to thank the OpenAI Research Access Program for API support and extend our gratitude to Ellie Pavlick, Tianran Zhang, Carmen Yu, Angela Xing, Chandradeep Pokhariya, Sudarshan Harithas, Hongyu Li, Chaerin Min, Xindi Qu, Xiaoquan Liu, Hao Sun, Melvin He and Brandon Woodard.
+We appreciate helps from :  
+
+* Public code like [EasyMocap](https://github.com/zju3dv/EasyMocap), [text-to-motion](https://github.com/EricGuo5513/text-to-motion), [TM2T](https://github.com/EricGuo5513/TM2T), [MDM](https://github.com/GuyTevet/motion-diffusion-model), [T2M-GPT](https://github.com/Mael-zys/T2M-GPT) etc.
+*  This research was supported by AFOSR grant FA9550-21 1-0214, NSF CAREER grant #2143576, and ONR DURIP grant N00014-23-1-2804. We would like to thank the Ope nAI Research Access Program for API support and extend our gratitude to Ellie Pavlick, Tianran Zhang, Carmen Yu, Angela Xing, Chandradeep Pokhariya, Sudarshan Harithas, Hongyu Li, Chaerin Min, Xindi Qu, Xiaoquan Liu, Hao Sun, Melvin He and Brandon Woodard.
 
 ## License
 
