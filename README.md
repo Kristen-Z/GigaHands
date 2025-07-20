@@ -76,8 +76,6 @@ git clone https://github.com/zju3dv/EasyMocap.git third-party/EasyMocap
 
 2. Build the C/C++ extensions to link EasyMocap into your conda environment. 
 ```shell
-mkdir -p third-party
-git clone https://github.com/zju3dv/EasyMocap.git third-party/EasyMocap
 cd third-party/EasyMocap
 python setup.py develop
 ```
