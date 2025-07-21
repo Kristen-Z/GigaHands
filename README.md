@@ -154,6 +154,7 @@ python setup.py develop
 
 After downloading hand pose, object pose and object meshes, run the script below to visualize hand-object mesh. 
 
+[▶ Video demo (MP4, 211k)](visualizations/17_instruments/p003-instrument_0033/output.mp4)
 ```bash
 python render_mesh_video.py \
     --dataset_root <data_root_path> \
@@ -168,7 +169,7 @@ python render_mesh_video.py \
 ```
 
 You will see videos of the rendered hand-object mehs in `visualizations` directory.
-<video src="visualizations/17_instruments/p003-instrument_0033/output.mp4" controls width="480"></video>
+<img src='visualizations/17_instruments/p003-instrument_0033/output.gif' width=480>
 
 
 Visualizer below is customized for training text-hand models. 
