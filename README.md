@@ -26,8 +26,7 @@
 
 ## 📢 Updates
 
-- [2025/07/21] We provide [hand-object mesh visualizer](##Visualizations
-). The visualizer provides hand-object temporal alignment, and camera parameter usage. 
+- [2025/07/21] We provide [hand-object mesh visualizer](./render_mesh_video.py). The visualizer provides hand-object temporal alignment, and camera parameter usage. 
 
 - [2025/07/09] For **object meshes**, you can download them [here](https://g-852369.56197.5898.data.globus.org/scans_publish.zip). 
 
@@ -151,7 +150,7 @@ python setup.py develop
 ./checkpoints/GigaHands/text_mot_match/		# Motion & Text feature extractors for evaluation
 ```
 
-## Visualizations
+## 🎥 Visualizations
 
 After downloading hand pose, object pose and object meshes, run the script below to visualize hand-object mesh. 
 
