@@ -1,11 +1,10 @@
 <div align="center">
-<h1>[CVPR 2025 Highlight] GigaHands: A Massive Anotated Dataset of Bimanual Hand Activities</h1>
+<h1> <b>[CVPR 2025 Highlight]</b> <br> GigaHands: A Massive Annotated Dataset of Bimanual Hand Activities </h1>
 <a href="https://ivl.cs.brown.edu/research/gigahands.html"><img src="https://img.shields.io/badge/Project_Page-green" alt="Project Page"></a>
-<a href="https://www.arxiv.org/abs/2412.04244" target="_blank" rel="noopener noreferrer"> <img src="https://img.shields.io/badge/Paper-VGGT" alt="Paper PDF">
-</a>
-<a href="https://ivl.cs.brown.edu/assets/images/projects/gigahands/gigahands_explain.mp4"> <img src="https://img.shields.io/badge/Demo-blue" alt="Demo">
+<a href="https://www.arxiv.org/abs/2412.04244" target="_blank" rel="noopener noreferrer"> <img src="https://img.shields.io/badge/Paper-VGGT" alt="Paper PDF"></a>
+<a href="https://ivl.cs.brown.edu/assets/images/projects/gigahands/gigahands_explain.mp4"> <img src="https://img.shields.io/badge/Demo-blue" alt="Demo"></a>
 
-**[Interactive 3D Vision & Learning Lab, Brown University](https://ivl.cs.brown.edu/)**
+**[Brown IVL](https://ivl.cs.brown.edu/)**
 <p>
     <a href="https://freddierao.github.io/">Rao Fu<sup>*</sup></a>
     ·
@@ -25,7 +24,11 @@
 <img src="./assets/teaser.jpg" alt="[Teaser Figure]" style="zoom:80%;" />
 </div>
 
-## Updates
+## 📢 Updates
+
+- [2025/07/21] We provide [hand-object mesh visualizer](##Visualizations
+). The visualizer provides hand-object temporal alignment, and camera parameter usage. 
+
 - [2025/07/09] For **object meshes**, you can download them [here](https://g-852369.56197.5898.data.globus.org/scans_publish.zip). 
 
   We also provide smoother 3D hand poses that are aligned with the object coordinate system, derived from MANO parameters — available [here](https://g-852369.56197.5898.data.globus.org/keypoints_3d_mano_align.tar.gz).
@@ -41,44 +44,46 @@ Complete **text annotation** are available [here](https://g-852369.56197.5898.da
 
 More data coming soon! 🔜
 
-## Overview
+## 🗒️ Overview
 Understanding bimanual human hand activities is a critical problem in AI and robotics. We cannot build large models of bimanual activities because existing datasets lack the scale, coverage of diverse hand activities, and detailed annotations. We introduce GigaHands, a massive annotated dataset capturing 34 hours of bimanual hand activities from **56 subjects** and **417 objects**, totaling **14k motion clips** derived from **183 million frames** paired with **84k text annotations**. Our markerless capture setup and data acquisition protocol enable fully automatic 3D hand and object estimation while minimizing the effort required for text annotation. The scale and diversity of GigaHands enable broad applications, including text-driven action synthesis, hand motion captioning, and dynamic radiance field reconstruction.
 
-## Data Format
+## 📂 Data Format
 
+We store our dataset on [Globus](https://www.globus.org/). Access the raw data via [here](https://app.globus.org/file-manager?origin_id=d7b33299-4380-49be-9727-78271911d231&origin_path=%2F).
 ### Demo Data
 
-The demo data contains 5 motion sequences. We store our dataset on Globus. You can download a demo sequence from [here](https://g-852369.56197.5898.data.globus.org/gigahands_demo.tar.gz), all annotations from [here](https://g-852369.56197.5898.data.globus.org/gigahands_demo_all.tar.gz), and access the raw data via [here](https://app.globus.org/file-manager?origin_id=d7b33299-4380-49be-9727-78271911d231&origin_path=%2F).
+You can download 1 demo sequence from [here](https://g-852369.56197.5898.data.globus.org/gigahands_demo.tar.gz).
+Or download 5 demo sequences from [here](https://g-852369.56197.5898.data.globus.org/gigahands_demo_all.tar.gz). 
 
-The file directory looks like this:
+<summary>Directory Structure (Click to expand)</summary>
 
-```
-gigahands_demo/
-├── hand_pose/
-    ├── p<participant id>-<scene>-<squence id>/
-        ├── bboxes/							# bounding boxes for 2D keypoints tracking
-        ├── keypoints_2d/						# 2D hand keypoints 
-        ├── keypoints_3d/						# 3D hand keypoints (triangulate multi-view 2D keypoints.)
-        ├── keypoints_3d_mano/						# 3D hand keypoints (extract from mano parms and normalized, more smooth)
-        ├── mano_vid/							# visualizations of mano parameters 
-        ├── params/							# mano parameters
-        ├── rgb_vid/							# raw multiview videos
-        	├── brics-odrind-<camera id>-camx
-        		├── xxx.mp4
-        		├── xxx.txt
-        	├── ...
-        ├── repro_2d_vid/						# visualizations of 2d hand keypoints
-        ├── repro_3d_vid/						# visualizations of 3d hand keypoints
-        ├── optim_params.txt						# camera parameters
-    ├── ...
-└── object_pose
-    ├── p<participant id>-<scene>-<squence id>/
-        ├── mesh							# reconstructed object mesh
-        ├── pose							# object pose
-        ├── render							# visualizations of object pose
-        ├── segmentation						# segmented object frames
-    ├── ...
-```
+<details>
+    ```text
+    gigahands_demo/
+    ├── hand_pose/
+    │   ├── p<participant id>-<scene>-<squence id>/
+    │   │   ├── bboxes/
+    │   │   ├── keypoints_2d/
+    │   │   ├── keypoints_3d/
+    │   │   ├── keypoints_3d_mano/
+    │   │   ├── mano_vid/
+    │   │   ├── params/
+    │   │   ├── rgb_vid/
+    │   │   │   ├── brics-odroid-<camera id>-camx/
+    │   │   │       ├── xxx.mp4
+    │   │   │       ├── xxx.txt
+    │   │   ├── repro_2d_vid/
+    │   │   ├── repro_3d_vid/
+    │   │   ├── optim_params.txt
+    │   ├── ...
+    └── object_pose/
+        ├── p<participant id>-<scene>-<squence id>/
+        │   ├── mesh/
+        │   ├── pose/
+        │   ├── render/
+        │   ├── segmentation/
+        ├── ...
+</details>
 
 ### Whole Dataset
 
@@ -86,23 +91,36 @@ The dataset directory should look like this:
 
 ```python
 ./dataset/GigaHands/
+├── multiview_rgb_vids/
+    ├── p<participant id>-<scene>/
+        ├── brics-odroid-<camera id>/
+            ├── brics-odroid-<camera id>_<sequence 0 timestamp>.mp4
+            ├── brics-odroid-<camera id>_<sequence 1 timestamp>.mp4
+            ├── ...
 ├── hand_poses/
     ├── p<participant id>-<scene>/
         ├── keypoints_3d/						# 3D hand keypoints (triangulate multi-view 2D keypoints.)
         ├── keypoints_3d_mano/						# 3D hand keypoints (extract from mano parms and normalized, more smooth)
         ├── params/							# mano parameters
+        ├── optim_params.txt				# camera parameters
 ├── object_poses/
-	├── <object name>
-		├── p<participant id>-<scene>_<squence id>/
-			├── pose					# object 6DoF poses
-└── annotations_v2.jsonl						# text annotations
+    ├── <scene name>
+        ├── <object name>
+            ├── p<participant id>-<scene>_<squence id>/
+                ├── pose					# object 6DoF poses
+├── object_meta/                            # all scanned and generated meshes
+    ├── <scene name>
+        ├── <object name>
+
+└── annotations_v2.jsonl 					# text annotations
 ```
+Downlod the multiview_rgb videos from [here](https://app.globus.org/file-manager?origin_id=d7b33299-4380-49be-9727-78271911d231&origin_path=%2Fmultiview_rgb_vids%2F), hand annotations and camera parameters from [here](https://g-852369.56197.5898.data.globus.org/hand_poses.tar.gz), smoothed 3d hand keypoints from [here](https://g-852369.56197.5898.data.globus.org/keypoints_3d_mano_align.tar.gz), object poses from [here](https://app.globus.org/file-manager?origin_id=d7b33299-4380-49be-9727-78271911d231&origin_path=%2Fobject_poses%2F), object mesh from [here](https://g-852369.56197.5898.data.globus.org/scans_publish.zip), text annotations from [here](https://g-852369.56197.5898.data.globus.org/annotations_v2.jsonl?download=1), and the original instruction script grouped by scenario, scene, activity from [here](). 
 
 ## Installation
 
 This code requires:
 
-* Python 3.8
+* Python 3.8+
 * conda3 or miniconda3
 * CUDA capable GPU (one is enough)
 
@@ -135,7 +153,26 @@ python setup.py develop
 
 ## Visualizations
 
-After downloading all hand pose annotations, run the script below to visualize them. 
+After downloading hand pose, object pose and object meshes, run the script below to visualize hand-object mesh. 
+
+```bash
+python render_mesh_video.py \
+    --dataset_root <data_root_path> \
+    --scene_name 17_instruments \
+    --session_name p003-instrument \
+    --seq_id 33 \
+    --object_name ukelele_scan \
+    --mesh_name ukelele-simplified1_1.obj \
+    --render_camera brics-odroid-011_cam0 \
+    --save_root visualizations
+
+```
+
+You will see videos of the rendered hand-object mehs in `visualizations` directory.
+<video src="visualizations/17_instruments/p003-instrument_0033/output.mp4" controls width="480"></video>
+
+
+Visualizer below is customized for training text-hand models. 
 
 ```bash
 python visualize_hands.py
@@ -143,7 +180,7 @@ python visualize_hands.py
 
 You will see videos of the MANO render results and reprojected keypoints in the `visualizations` directory.
 
-## Inference
+## 🚀 Inference - text2motion
 
 Sampling results from customized descriptions:
 
@@ -151,7 +188,7 @@ Sampling results from customized descriptions:
 python gen_motion_custom.py --resume-pth ./checkpoints/GigaHands/VQVAE/net_last.pth --resume-trans ./checkpoints/GigaHands/GPT/net_best_fid.pth --input-text ./input.txt
 ```
 
-## Train
+## 🏋️ Training - text2motion
 
 The results are saved in the folder `output`.
 
@@ -212,6 +249,7 @@ python3 train_t2m_trans_hand.py  \
 - [x] Release hand pose data
 - [x] Release multi-view video data
 - [ ] Release object pose data (13k) and meshes
+- [ ] Release hand-object-motion and meshes correspondence file
 - [x] Release inference code for text-to-motion task
 - [x] Release training code for text-to-motion task
 
@@ -220,11 +258,12 @@ python3 train_t2m_trans_hand.py  \
 If you find our work useful in your research, please cite:
 
 ```
-@article{fu2024gigahands,
-  title={GigaHands: A Massive Annotated Dataset of Bimanual Hand Activities},
+@inproceedings{fu2025gigahands,
+  title={Gigahands: A massive annotated dataset of bimanual hand activities},
   author={Fu, Rao and Zhang, Dingxi and Jiang, Alex and Fu, Wanjia and Funk, Austin and Ritchie, Daniel and Sridhar, Srinath},
-  journal={arXiv preprint arXiv:2412.04244},
-  year={2024}
+  booktitle={Proceedings of the Computer Vision and Pattern Recognition Conference},
+  pages={17461--17474},
+  year={2025}
 }
 ```
 
