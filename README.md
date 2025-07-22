@@ -107,7 +107,7 @@ The dataset directory should look like this:
         ├── <object name>
             ├── p<participant id>-<scene>_<squence id>/
                 ├── pose				# object 6DoF poses
-├── object_meta/                                    # all scanned and generated meshes
+├── object_meta/                                        # all scanned and generated meshes
     ├── <scene name>
         ├── <object name>
 
