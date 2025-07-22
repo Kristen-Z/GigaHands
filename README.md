@@ -98,8 +98,8 @@ The dataset directory should look like this:
             ├── ...
 ├── hand_poses/
     ├── p<participant id>-<scene>/
-        ├── keypoints_3d/						# 3D hand keypoints (triangulate multi-view 2D keypoints.)
-        ├── keypoints_3d_mano/						# 3D hand keypoints (extract from mano parms and normalized, more smooth)
+        ├── keypoints_3d/					# 3D hand keypoints (triangulate multi-view 2D keypoints.)
+        ├── keypoints_3d_mano/				# 3D hand keypoints (extract from mano parms and normalized, more smooth)
         ├── params/							# mano parameters
         ├── optim_params.txt				# camera parameters
 ├── object_poses/
@@ -113,7 +113,7 @@ The dataset directory should look like this:
 
 └── annotations_v2.jsonl 					# text annotations
 ```
-Downlod the multiview_rgb videos from [here](https://app.globus.org/file-manager?origin_id=d7b33299-4380-49be-9727-78271911d231&origin_path=%2Fmultiview_rgb_vids%2F), hand annotations and camera parameters from [here](https://g-852369.56197.5898.data.globus.org/hand_poses.tar.gz), smoothed 3d hand keypoints from [here](https://g-852369.56197.5898.data.globus.org/keypoints_3d_mano_align.tar.gz), object poses from [here](https://app.globus.org/file-manager?origin_id=d7b33299-4380-49be-9727-78271911d231&origin_path=%2Fobject_poses%2F), object mesh from [here](https://g-852369.56197.5898.data.globus.org/scans_publish.zip), text annotations from [here](https://g-852369.56197.5898.data.globus.org/annotations_v2.jsonl?download=1), and the original instruction script grouped by scenario, scene, activity from [here](). 
+Downlod the multiview_rgb videos from [here](https://app.globus.org/file-manager?origin_id=d7b33299-4380-49be-9727-78271911d231&origin_path=%2Fmultiview_rgb_vids%2F), hand annotations and camera parameters from [here](https://g-852369.56197.5898.data.globus.org/hand_poses.tar.gz), smoothed 3d hand keypoints from [here](https://g-852369.56197.5898.data.globus.org/keypoints_3d_mano_align.tar.gz), object poses from [here](https://app.globus.org/file-manager?origin_id=d7b33299-4380-49be-9727-78271911d231&origin_path=%2Fobject_poses%2F), object mesh from [here](https://g-852369.56197.5898.data.globus.org/scans_publish.zip), text annotations from [here](https://g-852369.56197.5898.data.globus.org/annotations_v2.jsonl?download=1), and the original instruction script grouped by scenario, scene, activity from [here](https://g-852369.56197.5898.data.globus.org/instruction_script.json). 
 
 ## Installation
 
