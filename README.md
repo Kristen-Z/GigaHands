@@ -26,6 +26,7 @@
 
 ## 📢 Updates
 
+- [2025/09/04] For full **object poses**, access our Globus repository: [here](https://app.globus.org/file-manager?origin_id=2dc33637-199d-4199-bf5d-40004da7e485&origin_path=%2Fdata%2Fssrinath%2Fdatasets%2FAction%2Fbrics-mini%2Fpublic_data%2F). There are a total of 3.3k object motion sequences in 4 zip files ([zip 1](https://m-8f2a9c.56197.5898.data.globus.org/data/ssrinath/datasets/Action/brics-mini/public_data/pose_jsons_round1_001.zip), [zip 2](https://m-8f2a9c.56197.5898.data.globus.org/data/ssrinath/datasets/Action/brics-mini/public_data/pose_jsons_round1_002.zip), [zip 3](https://m-8f2a9c.56197.5898.data.globus.org/data/ssrinath/datasets/Action/brics-mini/public_data/pose_jsons_round1_003.zip), [zip 4](https://m-8f2a9c.56197.5898.data.globus.org/data/ssrinath/datasets/Action/brics-mini/public_data/pose_jsons_round1_004.zip)). Object meta annotation is provided [here](https://m-8f2a9c.56197.5898.data.globus.org/data/ssrinath/datasets/Action/brics-mini/public_data/object_meta.zip). Please checkout the [README_object](README_object.md) for usage. 
 - [2025/07/21] We provide [hand-object mesh visualizer](./render_mesh_video.py). The visualizer provides hand-object temporal alignment, and camera parameter usage. 
 
 - [2025/07/09] For **object meshes**, you can download them [here](https://g-852369.56197.5898.data.globus.org/scans_publish.zip). 
