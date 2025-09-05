@@ -29,18 +29,16 @@
 - [2025/09/04] For full **object poses**, access our Globus repository: [here](https://app.globus.org/file-manager?origin_id=625b46a5-022a-4908-a8bb-7f2b3e3b382c&origin_path=%2F). There are a total of 3.3k object motion sequences in 4 zip files ([zip 1](https://g-dc7fc0.56197.5898.data.globus.org/pose_jsons_round1_001.zip), [zip 2](https://g-dc7fc0.56197.5898.data.globus.org/pose_jsons_round1_002.zip), [zip 3](https://g-dc7fc0.56197.5898.data.globus.org/pose_jsons_round1_003.zip), [zip 4](https://g-dc7fc0.56197.5898.data.globus.org/pose_jsons_round1_004.zip)). Object meta annotation is provided [here](https://g-dc7fc0.56197.5898.data.globus.org/object_meta.zip). Please checkout the [README_object](README_object.md) for usage. 
 - [2025/07/21] We provide [hand-object mesh visualizer](./render_mesh_video.py). The visualizer provides hand-object temporal alignment, and camera parameter usage. 
 
-- [2025/07/09] For **object meshes**, you can download them [here](https://g-852369.56197.5898.data.globus.org/scans_publish.zip). 
+- [2025/07/09] For **object meshes**, you can download them [here](https://g-ad09a0.56197.5898.data.globus.org/scans_publish.zip). 
 
-  We also provide smoother 3D hand poses that are aligned with the object coordinate system, derived from MANO parameters — available [here](https://g-852369.56197.5898.data.globus.org/keypoints_3d_mano_align.tar.gz).
+  We also provide smoother 3D hand poses that are aligned with the object coordinate system, derived from MANO parameters — available [here](https://g-ad09a0.56197.5898.data.globus.org/keypoints_3d_mano_align.tar.gz).
   Note: the previously provided `keypoints_3d_mano` were also generated from MANO parameters, but have been normalized and recentered to better support motion generation training.
 
-- [2025/05/23] For **object poses**, access our Globus repository: [here](https://app.globus.org/file-manager?origin_id=d7b33299-4380-49be-9727-78271911d231&origin_path=%2Fobject_poses%2F). Download each `.tar.gz` separately (contains 1000 motion sequences per file.)
+- [2025/04/30] For **multiview RGB videos**, access our Globus repository: [here](https://app.globus.org/file-manager?origin_id=63bfc5ca-bb87-4633-b4b5-5e81b35fdbdf&origin_path=%2Fmultiview_rgb_vids%2F). Download each `.tar.gz` separately (contains 10 views per file, 51 camera views in total.)
 
-- [2025/04/30] For **multiview RGB videos**, access our Globus repository: [here](https://app.globus.org/file-manager?origin_id=d7b33299-4380-49be-9727-78271911d231&origin_path=%2Fmultiview_rgb_vids%2F). Download each `.tar.gz` separately (contains 10 views per file, 51 camera views in total.)
+- [2025/04/02] We are pleased to release our full **hand pose** dataset, available for download [here](https://g-ad09a0.56197.5898.data.globus.org/hand_poses.tar.gz) (Including all `keypoints_3d`,  `keypoints_3d_mano` and `params`). 
 
-- [2025/04/02] We are pleased to release our full **hand pose** dataset, available for download [here](https://g-852369.56197.5898.data.globus.org/hand_poses.tar.gz) (Including all `keypoints_3d`,  `keypoints_3d_mano` and `params`). 
-
-Complete **text annotation** are available [here](https://g-852369.56197.5898.data.globus.org/annotations_v2.jsonl?download=1). We used the `rewritten_annotation` for model training. 
+Complete **text annotation** are available [here](https://g-ad09a0.56197.5898.data.globus.org/annotations_v2.jsonl). We used the `rewritten_annotation` for model training. 
 
 More data coming soon! 🔜
 
@@ -49,11 +47,11 @@ Understanding bimanual human hand activities is a critical problem in AI and rob
 
 ## 📂 Data Format
 
-We store our dataset on [Globus](https://www.globus.org/). Access the raw data via [here](https://app.globus.org/file-manager?origin_id=d7b33299-4380-49be-9727-78271911d231&origin_path=%2F).
+We store our dataset on [Globus](https://www.globus.org/). Access the raw data via [here](https://app.globus.org/file-manager?origin_id=63bfc5ca-bb87-4633-b4b5-5e81b35fdbdf&origin_path=%2F).
 ### Demo Data
 
-You can download 1 demo sequence from [here](https://g-852369.56197.5898.data.globus.org/gigahands_demo.tar.gz).
-Or download 5 demo sequences from [here](https://g-852369.56197.5898.data.globus.org/gigahands_demo_all.tar.gz). 
+You can download 1 demo sequence from [here](https://g-ad09a0.56197.5898.data.globus.org/gigahands_demo.tar.gz).
+Or download 5 demo sequences from [here](https://g-ad09a0.56197.5898.data.globus.org/gigahands_demo_all.tar.gz). 
 
 <summary>Directory Structure (Click to expand)</summary>
 
@@ -114,7 +112,7 @@ The dataset directory should look like this:
 
 └── annotations_v2.jsonl 				# text annotations
 ```
-Downlod the multiview_rgb videos from [here](https://app.globus.org/file-manager?origin_id=d7b33299-4380-49be-9727-78271911d231&origin_path=%2Fmultiview_rgb_vids%2F), hand annotations and camera parameters from [here](https://g-852369.56197.5898.data.globus.org/hand_poses.tar.gz), smoothed 3d hand keypoints from [here](https://g-852369.56197.5898.data.globus.org/keypoints_3d_mano_align.tar.gz), object poses from [here](https://app.globus.org/file-manager?origin_id=d7b33299-4380-49be-9727-78271911d231&origin_path=%2Fobject_poses%2F), object mesh from [here](https://g-852369.56197.5898.data.globus.org/scans_publish.zip), text annotations from [here](https://g-852369.56197.5898.data.globus.org/annotations_v2.jsonl?download=1), and the original instruction script grouped by scenario, scene, activity from [here](https://g-852369.56197.5898.data.globus.org/instruction_script.json). 
+Downlod the multiview_rgb videos from [here](https://app.globus.org/file-manager?origin_id=63bfc5ca-bb87-4633-b4b5-5e81b35fdbdf&origin_path=%2Fmultiview_rgb_vids%2F), hand annotations and camera parameters from [here](https://g-ad09a0.56197.5898.data.globus.org/hand_poses.tar.gz), smoothed 3d hand keypoints from [here](https://g-ad09a0.56197.5898.data.globus.org/keypoints_3d_mano_align.tar.gz), object poses from [here](https://app.globus.org/file-manager?origin_id=625b46a5-022a-4908-a8bb-7f2b3e3b382c&origin_path=%2F), object mesh from [here](https://g-ad09a0.56197.5898.data.globus.org/scans_publish.zip), text annotations from [here](https://g-ad09a0.56197.5898.data.globus.org/annotations_v2.jsonl), and the original instruction script grouped by scenario, scene, activity from [here](https://g-ad09a0.56197.5898.data.globus.org/instruction_script.json). 
 
 ## Installation
 
