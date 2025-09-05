@@ -7,7 +7,7 @@ We release object motion tracking results with manual validation for GigaHands d
 
 ## 📂 Object Pose Data
 
-Download object pose [here](https://app.globus.org/file-manager?origin_id=2dc33637-199d-4199-bf5d-40004da7e485&origin_path=%2Fdata%2Fssrinath%2Fdatasets%2FAction%2Fbrics-mini%2Fpublic_data%2F). There are 3.3k object motion sequences in 4 zip files ([zip 1](https://m-8f2a9c.56197.5898.data.globus.org/data/ssrinath/datasets/Action/brics-mini/public_data/pose_jsons_round1_001.zip), [zip 2](https://m-8f2a9c.56197.5898.data.globus.org/data/ssrinath/datasets/Action/brics-mini/public_data/pose_jsons_round1_002.zip), [zip 3](https://m-8f2a9c.56197.5898.data.globus.org/data/ssrinath/datasets/Action/brics-mini/public_data/pose_jsons_round1_003.zip), [zip 4](https://m-8f2a9c.56197.5898.data.globus.org/data/ssrinath/datasets/Action/brics-mini/public_data/pose_jsons_round1_004.zip)).
+Download object pose [here](https://app.globus.org/file-manager?origin_id=625b46a5-022a-4908-a8bb-7f2b3e3b382c&origin_path=%2F). There are 3.3k object motion sequences in 4 zip files ([zip 1](https://g-dc7fc0.56197.5898.data.globus.org/pose_jsons_round1_001.zip), [zip 2](https://g-dc7fc0.56197.5898.data.globus.org/pose_jsons_round1_002.zip), [zip 3](https://g-dc7fc0.56197.5898.data.globus.org/pose_jsons_round1_003.zip), [zip 4](https://g-dc7fc0.56197.5898.data.globus.org/pose_jsons_round1_004.zip)).
 Tracked object poses are stored under:
 
 ```
@@ -37,7 +37,7 @@ These meshes correspond to the `<object_path>` entries used in the annotation CS
 
 ## ✅ Annotation Format
 
-Down load object meta data [here](https://m-8f2a9c.56197.5898.data.globus.org/data/ssrinath/datasets/Action/brics-mini/public_data/object_meta.zip). Per-scene annotations are provided as CSV files, with both **object presence** and **tracking success** information.
+Down load object meta data [here](https://g-dc7fc0.56197.5898.data.globus.org/object_meta.zip). Per-scene annotations are provided as CSV files, with both **object presence** and **tracking success** information.
 
 The format is:
 
