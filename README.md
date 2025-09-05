@@ -151,7 +151,7 @@ python setup.py develop
 
 ## 🎥 Visualizations
 
-After downloading hand pose, object pose and object meshes, run the script below to visualize hand-object mesh. 
+Example use of **hand pose and object pose annotation**: After downloading hand pose, object pose and object meshes, run the script below to **visualize hand-object mesh**. 
 
 [▶ Video demo (MP4, 211k)](visualizations/17_instruments/p003-instrument_0033/output.mp4)
 ```bash
@@ -167,17 +167,31 @@ python render_mesh_video.py \
 
 ```
 
-You will see videos of the rendered hand-object mehs in `visualizations` directory.
+You will see videos of the rendered hand-object mesh in `visualizations` directory.
 <img src='visualizations/17_instruments/p003-instrument_0033/output.gif' width=480>
 
 
-Visualizer below is customized for training text-hand models. 
+Example use for **text-hand annotations**. Visualizer below is customized for training text-hand models. 
 
 ```bash
 python visualize_hands.py
 ```
 
 You will see videos of the MANO render results and reprojected keypoints in the `visualizations` directory.
+
+
+Example use for **multi-view videos**. Visualizer below is customized for **multiview video loading**. 
+
+```bash
+python multiview_videoloader.py \
+    --video_root_dir <your-path-to-multiview_rgb_vids> \
+    --session <session name, i.e. p001-folder> \
+    --seqid <sequence id, i.e. 17> \
+    --out_dir <your-path-to-hand_poses (which contains optim_params.txt)>
+```
+
+You will see 3 concatenated frames from multi-views from targeted session and sequence id under the `visualizations` directory.
+
 
 ## 🚀 Inference - text2motion
 
