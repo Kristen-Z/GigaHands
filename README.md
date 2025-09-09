@@ -261,8 +261,8 @@ python3 train_t2m_trans_hand.py  \
 - [x] Release demo data
 - [x] Release hand pose data
 - [x] Release multi-view video data
-- [ ] Release object pose data (13k) and meshes
-- [ ] Release hand-object-motion and meshes correspondence file
+- [x] Release object pose data (3.3k) and meshes
+- [x] Release hand-object-motion and meshes correspondence file
 - [x] Release inference code for text-to-motion task
 - [x] Release training code for text-to-motion task
 
