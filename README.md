@@ -109,10 +109,14 @@ The dataset directory should look like this:
 ├── object_meta/                                        # all scanned and generated meshes
     ├── <scene name>
         ├── <object name>
+    ├── scene_wise_round1
+        ├── <scene name>_annotated_round1.csv           # annotation for object mesh occurance, tracking success <--> scene-sequence id
 
 └── annotations_v2.jsonl 				# text annotations
+└── instruction_script.json 			# original instruction for filming
+└── multiview_camera_video_map.csv      # scene-sequence id <-> multiview rgb video id mapping
 ```
-Downlod the multiview_rgb videos from [here](https://app.globus.org/file-manager?origin_id=63bfc5ca-bb87-4633-b4b5-5e81b35fdbdf&origin_path=%2Fmultiview_rgb_vids%2F), hand annotations and camera parameters from [here](https://g-ad09a0.56197.5898.data.globus.org/hand_poses.tar.gz), smoothed 3d hand keypoints from [here](https://g-ad09a0.56197.5898.data.globus.org/keypoints_3d_mano_align.tar.gz), object poses from [here](https://app.globus.org/file-manager?origin_id=625b46a5-022a-4908-a8bb-7f2b3e3b382c&origin_path=%2F), object mesh from [here](https://g-ad09a0.56197.5898.data.globus.org/scans_publish.zip), text annotations from [here](https://g-ad09a0.56197.5898.data.globus.org/annotations_v2.jsonl), and the original instruction script grouped by scenario, scene, activity from [here](https://g-ad09a0.56197.5898.data.globus.org/instruction_script.json). 
+Downlod the multiview_rgb videos from [here](https://app.globus.org/file-manager?origin_id=63bfc5ca-bb87-4633-b4b5-5e81b35fdbdf&origin_path=%2Fmultiview_rgb_vids%2F), hand annotations and camera parameters from [here](https://g-ad09a0.56197.5898.data.globus.org/hand_poses.tar.gz), smoothed 3d hand keypoints from [here](https://g-ad09a0.56197.5898.data.globus.org/keypoints_3d_mano_align.tar.gz), object poses from [here](https://app.globus.org/file-manager?origin_id=625b46a5-022a-4908-a8bb-7f2b3e3b382c&origin_path=%2F), object mesh from [here](https://g-ad09a0.56197.5898.data.globus.org/scans_publish.zip), text annotations from [here](https://g-ad09a0.56197.5898.data.globus.org/annotations_v2.jsonl), the original instruction script grouped by scenario, scene, activity from [here](https://g-ad09a0.56197.5898.data.globus.org/instruction_script.json), scene-sequence mapping with video id meta file [here](https://g-852369.56197.5898.data.globus.org/multiview_camera_video_map.csv), object mesh mapping with scene-sequence id [here](https://g-dc7fc0.56197.5898.data.globus.org/object_meta.zip). 
 
 ## Installation
 
